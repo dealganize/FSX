@@ -1,0 +1,218 @@
+[
+ {
+  "avatar": "2e10d33bf8b95d29c18d7af97e58fad7",
+  "display_name": "philippe310",
+  "is_bot": false,
+  "is_owner": true,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "on",
+   "mention_pn": "on",
+   "team_name": "50 Shades of Trey"
+  },
+  "settings": null,
+  "user_id": "455104386859790336"
+ },
+ {
+  "avatar": "306ba565747758f1dfc308b1669f8768",
+  "display_name": "johnrog",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "archived": "off",
+   "avatar": "https://sleepercdn.com/uploads/306ba565747758f1dfc308b1669f8768.jpg",
+   "mascot_item_type_id_leg_1": "taco",
+   "mascot_item_type_id_leg_10": "taco",
+   "mascot_item_type_id_leg_11": "taco",
+   "mascot_item_type_id_leg_12": "taco",
+   "mascot_item_type_id_leg_13": "taco",
+   "mascot_item_type_id_leg_14": "taco",
+   "mascot_item_type_id_leg_15": "taco",
+   "mascot_item_type_id_leg_16": "taco",
+   "mascot_item_type_id_leg_17": "taco",
+   "mascot_item_type_id_leg_18": "taco",
+   "mascot_item_type_id_leg_2": "taco",
+   "mascot_item_type_id_leg_3": "taco",
+   "mascot_item_type_id_leg_4": "taco",
+   "mascot_item_type_id_leg_5": "taco",
+   "mascot_item_type_id_leg_6": "taco",
+   "mascot_item_type_id_leg_7": "taco",
+   "mascot_item_type_id_leg_8": "taco",
+   "mascot_item_type_id_leg_9": "taco",
+   "mascot_message_emotion_leg_1": "idle",
+   "mention_pn": "on",
+   "team_name": "Dusty Ballers"
+  },
+  "settings": null,
+  "user_id": "457920576615346176"
+ },
+ {
+  "avatar": "bd668b8b3d4d87e92caea5c641f524b4",
+  "display_name": "TheNotoriousTAT",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "on",
+   "avatar": "https://sleepercdn.com/uploads/bd668b8b3d4d87e92caea5c641f524b4",
+   "mention_pn": "on",
+   "team_name": "TheNotoriousTAT"
+  },
+  "settings": null,
+  "user_id": "736168849665323008"
+ },
+ {
+  "avatar": "67d487bd925c0708c2f9cbb8489cb36f",
+  "display_name": "lukebollyhateclub",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "archived": "off",
+   "mention_pn": "on",
+   "team_name": "lukebollyhateclub"
+  },
+  "settings": null,
+  "user_id": "867475663836344320"
+ },
+ {
+  "avatar": "82aec8e811b839b8ec25d7b458afd57b",
+  "display_name": "Emmet3125",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on",
+   "team_name": "The Mighty Fuchs"
+  },
+  "settings": null,
+  "user_id": "868822981550485504"
+ },
+ {
+  "avatar": "15d7cf259bc30eab8f6120f45f652fb6",
+  "display_name": "SunnyKoufax",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "avatar": "https://sleepercdn.com/uploads/25eae2f733e4386f3bcd1f362c5d931d",
+   "mention_pn": "on"
+  },
+  "settings": null,
+  "user_id": "869006832256081920"
+ },
+ {
+  "avatar": "cba6e43c5dbd48d804ca269d12d47bf4",
+  "display_name": "n0tspencer",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "off",
+   "archived": "off",
+   "avatar": "https://sleepercdn.com/uploads/4b67704d9631be475538d9719fd8394e.jpg",
+   "mention_pn": "on",
+   "show_mascots": "off",
+   "team_name": "A Detroit Superbowl"
+  },
+  "settings": null,
+  "user_id": "869205054845001728"
+ },
+ {
+  "avatar": "c85df4c6417b933de0392db0cc92395d",
+  "display_name": "seannofthedead",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "on",
+   "avatar": "https://sleepercdn.com/uploads/5b05080425da90ec5bf05877b842ff78",
+   "join_voice_pn": "off",
+   "league_report_pn": "on",
+   "mascot_message": "off",
+   "mention_pn": "on",
+   "player_like_pn": "off",
+   "player_nickname_update": "on",
+   "show_mascots": "off",
+   "team_name": "Week old sandwich",
+   "team_name_update": "on",
+   "trade_block_pn": "on",
+   "transaction_commissioner": "on",
+   "transaction_free_agent": "on",
+   "transaction_trade": "on",
+   "transaction_waiver": "on",
+   "user_message_pn": "on"
+  },
+  "settings": null,
+  "user_id": "869525641320648704"
+ },
+ {
+  "avatar": "f0edbf4278f53f9425db175073df6584",
+  "display_name": "vinny1988",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on",
+   "team_name": "Vinbobby"
+  },
+  "settings": null,
+  "user_id": "994583999945261056"
+ },
+ {
+  "avatar": "87e2c8d5e724cebd8bf558deb4bb8fbe",
+  "display_name": "thrill49",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "on",
+   "avatar": "https://sleepercdn.com/uploads/8d01f3c297427f1730e3ebd2cb31bf7d",
+   "mention_pn": "on",
+   "team_name": "Thrilladelphia"
+  },
+  "settings": null,
+  "user_id": "997987052484349952"
+ },
+ {
+  "avatar": "e7af4deab0289b4f5505646424895246",
+  "display_name": "MartinForry",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "avatar": "https://sleepercdn.com/uploads/ade347ed3626d5923c15f2e670002698.jpg",
+   "mention_pn": "on",
+   "team_name": " Royal Resurgence"
+  },
+  "settings": null,
+  "user_id": "1033070307084578816"
+ },
+ {
+  "avatar": "2bd7a454e9822a1197859206a8bda508",
+  "display_name": "mathiasbmg",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1388782577413787648",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "on",
+   "mention_pn": "on",
+   "team_name": "Münster Magic"
+  },
+  "settings": null,
+  "user_id": "1123611942796529664"
+ }
+]

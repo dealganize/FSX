@@ -1,0 +1,172 @@
+[
+ {
+  "avatar": "306ba565747758f1dfc308b1669f8768",
+  "display_name": "johnrog",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "archived": "off",
+   "mention_pn": "on"
+  },
+  "settings": null,
+  "user_id": "457920576615346176"
+ },
+ {
+  "avatar": "379f5379a3205b9706e6a4b7b4471a8e",
+  "display_name": "RonanDillon",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on"
+  },
+  "settings": null,
+  "user_id": "471439507367915520"
+ },
+ {
+  "avatar": "fc7b23ad7ca923cf0648a8306fb48330",
+  "display_name": "RogiesRejects",
+  "is_bot": false,
+  "is_owner": true,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "archived": "off",
+   "avatar": "https://sleepercdn.com/uploads/e839066bd280bc879d6869fc1beca5e5.jpg",
+   "mention_pn": "on",
+   "team_name": "Jaxson Dart in Your Neck"
+  },
+  "settings": null,
+  "user_id": "471439669377101824"
+ },
+ {
+  "avatar": "d55d1f7075eda01948318de4af616075",
+  "display_name": "CONOR97",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "avatar": "https://sleepercdn.com/uploads/d45fee7dfbf49d8a8f39eb6d74a74dcc.jpg",
+   "mention_pn": "on",
+   "team_name": "The Philadephia Beagles"
+  },
+  "settings": null,
+  "user_id": "471439935920926720"
+ },
+ {
+  "avatar": "909b16f12d1bd5b227bd97c98bc1f825",
+  "display_name": "BlackrockShitehawks",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on"
+  },
+  "settings": null,
+  "user_id": "471440392940679168"
+ },
+ {
+  "avatar": "a17bf5f93df38018dd16847a37070eed",
+  "display_name": "shanerodge",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on",
+   "team_name": "young bulls"
+  },
+  "settings": null,
+  "user_id": "471442165675847680"
+ },
+ {
+  "avatar": "78149bf7e1a4b4a9567e58b4efa2d1e7",
+  "display_name": "lambert97",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "avatar": "https://sleepercdn.com/uploads/3b495da76457447646e002679d34d5ef.jpg",
+   "mention_pn": "on",
+   "team_name": "They’ve hit the 2nd Bower"
+  },
+  "settings": null,
+  "user_id": "471442233728430080"
+ },
+ {
+  "avatar": "9f47fa7bdc47cac0612df93ac5e8bc50",
+  "display_name": "Johnnno",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on",
+   "team_name": "Mike_Tomlins_NewServerV2"
+  },
+  "settings": null,
+  "user_id": "481524903057551360"
+ },
+ {
+  "avatar": "a7224b2cd276a5641172a3c26f25f8d8",
+  "display_name": "Liam99K",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on",
+   "team_name": "The Mill Club"
+  },
+  "settings": null,
+  "user_id": "603542152869376000"
+ },
+ {
+  "avatar": "82aec8e811b839b8ec25d7b458afd57b",
+  "display_name": "SeanThornton99",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "allow_sms": "on",
+   "mention_pn": "on",
+   "team_name": "The Hairy Bowsies"
+  },
+  "settings": null,
+  "user_id": "1131244255911104512"
+ },
+ {
+  "avatar": "d55d1f7075eda01948318de4af616075",
+  "display_name": "TiarnanH",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on",
+   "team_name": "TeamTeeje"
+  },
+  "settings": null,
+  "user_id": "1238102004694257664"
+ },
+ {
+  "avatar": "d55d1f7075eda01948318de4af616075",
+  "display_name": "dylanrogers16",
+  "is_bot": false,
+  "is_owner": false,
+  "league_id": "1386714884397355008",
+  "metadata": {
+   "allow_pn": "on",
+   "mention_pn": "on"
+  },
+  "settings": null,
+  "user_id": "1258721745175592960"
+ }
+]
