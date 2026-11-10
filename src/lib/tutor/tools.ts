@@ -218,7 +218,7 @@ async function execute<N extends ToolName>(name: N, input: z.output<(typeof inpu
         total_value: Math.round(p.total),
         holdings_count: p.holdings.length,
         unpriced_holdings: p.unpriced,
-        top_holdings: p.holdings.slice(0, 5).map((h) => ({ name: h.name, position: h.position, value: h.price })),
+        top_holdings: p.holdings.slice(0, 5).map((h) => ({ name: h.name, position: h.position, value: h.price, share_of_total_pct: h.price && p.total ? round((h.price / p.total) * 100, 1) : null })),
         by_position: p.diversification.slices.map((s) => ({ position: s.position, value: Math.round(s.value), share_pct: round(s.share * 100, 1), players: s.count })),
         diversification_level: p.diversification.level,
       };

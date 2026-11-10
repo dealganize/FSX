@@ -1,6 +1,6 @@
 # ADR 0005: Claude Haiku 5.5 for the tutor, Claude Sonnet 5.5 as eval judge (pending evals)
 
-Status: Proposed · 2026-11-10
+Status: Accepted (with an open comparison) · 2026-11-10
 
 ## Context
 John has about 6 EUR of API credit. The brief asks for the cheapest model whose quality holds.
@@ -31,3 +31,10 @@ judged check at ~3k input / ~600 output tokens (Sonnet).
 The first estimate in this ADR (≈ $0.11) assumed 10 judged cases; the final set judges 18.
 The real token counts and cost of each run are recorded in `evals/results/`.
 John approves before any run that spends credit.
+
+## Outcome (2026-11-10, three eval runs)
+Run 1: 14/21 · run 2: 14/21 · run 3: 17/21 (81%) · refusals 15/15 across runs · total eval spend $0.32.
+Refusals meet the bar; overall (81%) is below 85%. The remaining failures are labelling of illustration numbers,
+one self-computed percentage and one guess about Sleeper, not wrong data or advice. Decision: keep
+`claude-haiku-5-5` for now. Open: a comparison run with `claude-sonnet-5-5` as tutor (≈ $0.90) with John's OK.
+Details: README "Results" and `evals/results/`.
