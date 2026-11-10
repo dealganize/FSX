@@ -32,6 +32,10 @@ export async function createDb(url: string | undefined): Promise<Db> {
 /** `dataDir` "memory://" gives an in-memory database (used by tests). */
 export async function createPgliteDb(dataDir: string): Promise<Db> {
   const { PGlite } = await import("@electric-sql/pglite");
+  if (!dataDir.startsWith("memory://")) {
+    const { mkdir } = await import("node:fs/promises");
+    await mkdir(dataDir, { recursive: true });
+  }
   const { drizzle } = await import("drizzle-orm/pglite");
   const client = await PGlite.create(dataDir);
   return drizzle(client, { schema }) as unknown as Db;
