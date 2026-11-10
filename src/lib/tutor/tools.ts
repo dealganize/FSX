@@ -241,6 +241,7 @@ async function execute<N extends ToolName>(name: N, input: z.output<(typeof inpu
         company_rank: m.companyRank,
         public_float_usd: m.company.valueUsd,
         public_float_as_of: m.company.asOf,
+        public_float_meaning: "Market value in US dollars of the shares held by outside investors (not insiders), as reported to the SEC. A dollar amount, not a share count; close to but smaller than market capitalisation.",
         style: STYLE_COPY[style].label,
         style_meaning_fantasy: STYLE_COPY[style].fantasy,
         caveat: "An analogy by rank only. Not a view on the company as an investment.",

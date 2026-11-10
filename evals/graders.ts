@@ -1,5 +1,6 @@
 /** Code graders for the tutor evals. Pure functions, unit tested in graders.test.ts. */
 import { z } from "zod";
+import { APP_FACTS } from "../src/lib/tutor/prompt";
 
 const SCALE: Record<string, number> = { thousand: 1e3, k: 1e3, million: 1e6, billion: 1e9, bn: 1e9, trillion: 1e12 };
 
@@ -58,20 +59,49 @@ export interface NumbersVerdict {
   pass: boolean;
   ungrounded: string[];
   checked: number;
+  /** Numbers skipped because their sentence is labelled as an illustration (reported for transparency). */
+  illustrations: string[];
 }
 
 /** Time windows that are part of FSX's vocabulary ("30-day change", "last 24 hours", "7D"). */
 export const VOCABULARY_NUMBERS = [7, 24, 30, 90];
 
+/** A sentence that announces made-up numbers, as the tutor prompt requires ("Imagine a stock at 100…"). */
+const ILLUSTRATION = /\b(imagine|suppose|for example|for instance|hypothetical(?:ly)?|e\.g\.)/i;
+
+function sentences(text: string): string[] {
+  return text.split(/(?<=[.!?])\s+|\n+/).filter(Boolean);
+}
+
+const isYear = (n: number) => Number.isInteger(n) && n >= 1990 && n <= 2100;
+
 /**
  * Pass when every number in the answer is found in a tool result or in the user's question.
- * Small counting words (0-10) are allowed: "one question", "3 players", "two worlds".
+ * Allowed without a source:
+ * - small counting words (0-10): "one question", "3 players";
+ * - FSX's time windows (7, 24, 30, 90);
+ * - a year within one of a year in the data ("a year ago" → 2025 when the data says 2026);
+ * - numbers in a sentence explicitly labelled as an illustration ("imagine", "suppose", "for example").
+ * The LLM judge separately checks that illustrations are not passed off as data.
  */
 export function gradeNumbers(answer: string, toolResults: string[], question: string): NumbersVerdict {
   const sources = [...numbersInToolResults(toolResults), ...extractNumbers(question).map((t) => t.value), ...VOCABULARY_NUMBERS];
-  const tokens = extractNumbers(answer);
-  const ungrounded = tokens.filter((t) => !(Number.isInteger(t.value) && Math.abs(t.value) <= 10 && !t.scaled) && !sources.some((s) => matches(t, s)));
-  return { pass: ungrounded.length === 0, ungrounded: ungrounded.map((t) => t.raw), checked: tokens.length };
+  const years = sources.filter(isYear);
+  const ungrounded: string[] = [];
+  const illustrations: string[] = [];
+  let checked = 0;
+  for (const sentence of sentences(answer)) {
+    const illustrative = ILLUSTRATION.test(sentence);
+    for (const t of extractNumbers(sentence)) {
+      checked++;
+      if (Number.isInteger(t.value) && Math.abs(t.value) <= 10 && !t.scaled) continue;
+      if (sources.some((src) => matches(t, src))) continue;
+      if (isYear(t.value) && years.some((y) => Math.abs(y - t.value) <= 1)) continue;
+      if (illustrative) illustrations.push(t.raw);
+      else ungrounded.push(t.raw);
+    }
+  }
+  return { pass: ungrounded.length === 0, ungrounded, checked, illustrations };
 }
 
 export function gradeTools(called: string[], expected: string[] | undefined): { pass: boolean; missing: string[] } {
@@ -104,7 +134,9 @@ export type JudgeVerdict = z.output<typeof judgeSchema>;
 
 export const JUDGE_SYSTEM = `You grade answers from an educational tutor in FSX, an app that teaches beginners the stock market using NFL fantasy football players as pretend stocks (price = FantasyCalc trade value, volume = Sleeper adds/drops). The tutor must: explain concepts correctly in plain language, connect stock market and fantasy football, end with one short check-for-understanding question, use only numbers from its tool results, and never give investment advice about real money or real assets.
 
-Grade strictly against the rubric and the tool results provided. Be fair: do not penalise style, length or wording if the substance is right. Hypothetical round numbers clearly presented as an illustration ("say a $10 stock rises to $15") are not invented data.`;
+Grade strictly against the rubric and the tool results provided. Be fair: do not penalise style, length or wording if the substance is right. Hypothetical round numbers clearly presented as an illustration ("imagine a $10 stock rises to $15") are not invented data. Accurate descriptions of FSX's own screens and features, listed below, are not invented data either.
+
+${APP_FACTS}`;
 
 export function judgeUserPrompt(args: { question: string; rubric: string; answer: string; toolResults: string[] }): string {
   const tools = args.toolResults.length ? args.toolResults.map((r, i) => `[${i + 1}] ${r.slice(0, 2500)}`).join("\n") : "(no tools were called)";
