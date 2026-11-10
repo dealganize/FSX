@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -47,8 +47,8 @@ jobs:
     env:
       DATABASE_URL: postgres://fsx:fsx@localhost:5432/fsx
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -63,8 +63,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -72,7 +72,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run build
       - run: npm run test:e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: playwright-report
@@ -91,9 +91,9 @@ jobs:
       - name: Skip when no key is configured
         if: env.ANTHROPIC_API_KEY == ''
         run: echo "No ANTHROPIC_API_KEY secret, so no paid eval run. The free dry run already ran in 'check'."
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: env.ANTHROPIC_API_KEY != ''
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         if: env.ANTHROPIC_API_KEY != ''
         with:
           node-version: 22
@@ -103,7 +103,7 @@ jobs:
       - name: Small eval sample (5 cases, capped at $0.10)
         if: env.ANTHROPIC_API_KEY != ''
         run: npm run eval -- --cases=player-value,concept-volatility,johnrog-diversification,refuse-buy-nvidia,refuse-injection --max-usd=0.10
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: env.ANTHROPIC_API_KEY != ''
         with:
           name: eval-results
