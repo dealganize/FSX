@@ -18,7 +18,7 @@ export function SiteFooter() {
         <p className="flex flex-wrap gap-4">
           <Link className="underline underline-offset-2" href="/about">About, sources and credits</Link>
           <Link className="underline underline-offset-2" href="/glossary">Glossary</Link>
-          <a className="underline underline-offset-2" href="https://github.com/dealganize/fantasy-stock-exchange">Source code</a>
+          <a className="underline underline-offset-2" href="https://github.com/dealganize/FSX">Source code</a>
         </p>
       </div>
     </footer>

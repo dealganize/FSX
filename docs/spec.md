@@ -4,7 +4,7 @@ Status: **v3, approved by John with changes** (2026-11-10)
 v2: education is the primary goal; the trading screens are the hands-on part of lessons.
 v3: name FSX confirmed; dynasty default + redraft toggle; Docker for local Postgres;
 first release ships 5 modules; new "Player ⇄ Stock" match on a starting page (§4.8).
-Owner: John Rogers · Repo (planned): `github.com/dealganize/fantasy-stock-exchange`
+Owner: John Rogers · Repo: `github.com/dealganize/FSX`
 
 ## 1. Why this exists
 

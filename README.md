@@ -116,8 +116,8 @@ dashed line. Volatility is shown only once 7 real daily snapshots exist.
 Requirements: Node.js 22+, npm. Docker is optional.
 
 ```bash
-git clone https://github.com/dealganize/fantasy-stock-exchange.git
-cd fantasy-stock-exchange
+git clone https://github.com/dealganize/FSX.git
+cd FSX
 npm install
 cp .env.example .env
 npm run snapshot      # load today's live NFL data (Sleeper + FantasyCalc)
@@ -189,7 +189,7 @@ John creates the accounts; no credentials are stored in the repo.
    $env:DATABASE_URL="<Neon connection string>"; npm run snapshot
    ```
 3. **Vercel**: sign up at vercel.com with GitHub → *Add New… → Project* → import
-   `dealganize/fantasy-stock-exchange` → framework Next.js (auto-detected).
+   `dealganize/FSX` → framework Next.js (auto-detected).
 4. In *Settings → Environment Variables* add:
    - `DATABASE_URL` = the Neon pooled connection string
    - `CRON_SECRET` = a long random string (e.g. from a password manager)
