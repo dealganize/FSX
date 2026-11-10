@@ -81,7 +81,8 @@ const isYear = (n: number) => Number.isInteger(n) && n >= 1990 && n <= 2100;
  * - small counting words (0-10): "one question", "3 players";
  * - FSX's time windows (7, 24, 30, 90);
  * - a year within one of a year in the data ("a year ago" → 2025 when the data says 2026);
- * - numbers in a sentence explicitly labelled as an illustration ("imagine", "suppose", "for example").
+ * - numbers in a sentence explicitly labelled as an illustration ("imagine", "suppose", "for example");
+ * - numbers inside a question (a sentence ending in "?"): a quiz question asserts nothing, so it cannot invent data.
  * The LLM judge separately checks that illustrations are not passed off as data.
  */
 export function gradeNumbers(answer: string, toolResults: string[], question: string): NumbersVerdict {
@@ -91,7 +92,7 @@ export function gradeNumbers(answer: string, toolResults: string[], question: st
   const illustrations: string[] = [];
   let checked = 0;
   for (const sentence of sentences(answer)) {
-    const illustrative = ILLUSTRATION.test(sentence);
+    const illustrative = ILLUSTRATION.test(sentence) || sentence.trim().endsWith("?");
     for (const t of extractNumbers(sentence)) {
       checked++;
       if (Number.isInteger(t.value) && Math.abs(t.value) <= 10 && !t.scaled) continue;

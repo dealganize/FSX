@@ -43,8 +43,11 @@ describe("gradeNumbers: illustrations and years", () => {
     const v = gradeNumbers("Imagine a stock at 100 that rises to 110. That is a 10% move.", [], "What is percentage change?");
     expect(v).toMatchObject({ pass: true, illustrations: ["100", "110"] });
   });
+  it("numbers in a quiz question are not claims", () => {
+    expect(gradeNumbers("Which is riskier: buying after a 70% rise, or after a 70% fall?", [], "What is buying high?")).toMatchObject({ pass: true, illustrations: ["70", "70"] });
+  });
   it("unlabelled made-up numbers still fail", () => {
-    expect(gradeNumbers("Would a player valued at 300 move more than one at 4,666?", [tool], "Who gained most?").ungrounded).toEqual(["300", "4,666"]);
+    expect(gradeNumbers("A player valued at 300 moves more than one at 4,666.", [tool], "Who gained most?").ungrounded).toEqual(["300", "4,666"]);
   });
   it("a year next to a year in the data is allowed, others are not", () => {
     expect(gradeNumbers("There is nothing for November 2025.", [tool], "Value a year ago?").pass).toBe(true);
