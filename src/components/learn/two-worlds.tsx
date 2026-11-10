@@ -11,7 +11,7 @@ export function TwoWorlds({ stock, fantasy }: { stock: string; fantasy: string }
         <p>{stock}</p>
       </div>
       <div className="bg-card rounded-lg border p-4">
-        <p className="text-learn mb-1 flex items-center gap-2 text-sm font-semibold">
+        <p className="text-learn-ink mb-1 flex items-center gap-2 text-sm font-semibold">
           <Trophy className="size-4" aria-hidden="true" /> In fantasy football…
         </p>
         <p>{fantasy}</p>

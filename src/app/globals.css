@@ -9,6 +9,7 @@
   --color-gain: var(--gain);
   --color-loss: var(--loss);
   --color-learn: var(--learn);
+  --color-learn-ink: var(--learn-ink);
   --color-pos-qb: var(--pos-qb);
   --color-pos-rb: var(--pos-rb);
   --color-pos-wr: var(--pos-wr);
@@ -68,7 +69,7 @@
   --secondary: oklch(0.95 0.02 190);
   --secondary-foreground: oklch(0.3 0.06 200);
   --muted: oklch(0.955 0.008 95);
-  --muted-foreground: oklch(0.46 0.02 255);
+  --muted-foreground: oklch(0.43 0.02 255);
   --accent: oklch(0.95 0.055 88);
   --accent-foreground: oklch(0.36 0.08 60);
   --destructive: oklch(0.55 0.2 27);
@@ -78,6 +79,7 @@
   --gain: oklch(0.5 0.13 152);
   --loss: oklch(0.54 0.19 27);
   --learn: oklch(0.72 0.15 75);
+  --learn-ink: oklch(0.5 0.12 62); /* amber dark enough for text on light surfaces (>= 4.5:1) */
   /* Position colours, validated with the dataviz palette checker (light surface). */
   --pos-qb: oklch(0.52 0.17 295);
   --pos-rb: oklch(0.55 0.13 185);
@@ -121,6 +123,7 @@
   --gain: oklch(0.77 0.15 152);
   --loss: oklch(0.74 0.16 27);
   --learn: oklch(0.8 0.14 80);
+  --learn-ink: oklch(0.8 0.14 80);
   /* Position colours, validated against the dark surface. */
   --pos-qb: oklch(0.64 0.17 295);
   --pos-rb: oklch(0.63 0.12 185);

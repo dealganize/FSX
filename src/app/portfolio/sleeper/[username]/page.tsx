@@ -67,7 +67,7 @@ async function RosterContent({ params, searchParams }: PageProps<"/portfolio/sle
               l.id === p.league.id ? "bg-primary text-primary-foreground border-primary" : "hover:bg-muted",
             )}
           >
-            {l.name} <span className="opacity-70">({l.isDynasty ? "dynasty" : "redraft"}, {l.teams} teams)</span>
+            {l.name} <span>({l.isDynasty ? "dynasty" : "redraft"}, {l.teams} teams)</span>
           </Link>
         ))}
       </nav>

@@ -43,7 +43,10 @@ export function TutorLauncher() {
   const endRef = useRef<HTMLDivElement>(null);
   const sendRef = useRef<(q: string) => void>(() => {});
 
-  useEffect(() => endRef.current?.scrollIntoView({ block: "end" }), [messages, status]);
+  useEffect(() => {
+    // Block body: newer browsers return a Promise from scrollIntoView, which must not become the effect cleanup.
+    endRef.current?.scrollIntoView({ block: "end" });
+  }, [messages, status]);
 
   async function send(question: string) {
     const q = question.trim();
