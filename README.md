@@ -49,6 +49,7 @@ buying high and selling low).
 - **Player page**: price chart from stored daily snapshots, key numbers, injury status, a volatility read-out,
   and a **practice trade** panel. After each trade, feedback explains what happened in market terms
   ("you bought after a big rise: that's buying high", "your portfolio is concentrated").
+- **Original avatars, no borrowed images**: players get initials tinted by position and companies get ticker badges, because player photos, NFL marks and company logos belong to others.
 - **Player ⇄ Stock match**: pairs a player with a real US-listed company at the same value percentile, using
   the company's SEC-reported public float, plus a "style" label (growth, blue chip, high risk, steady).
 - **Portfolios**: your practice portfolio (cost basis, unrealised and realised gain, diversification donut),

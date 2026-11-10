@@ -11,6 +11,7 @@ import { formatValue } from "@/lib/domain/market";
 import type { MarketRow } from "@/lib/repo/market";
 import { Change, InjuryChip, PositionChip, Sparkline } from "./bits";
 import { cn } from "@/lib/utils";
+import { PlayerAvatar } from "./avatars";
 
 export type SortKey = "value" | "change" | "volume" | "name";
 const POSITIONS = ["ALL", "QB", "RB", "WR", "TE"] as const;
@@ -130,6 +131,7 @@ export function MarketTable({
                 <td className="text-muted-foreground px-2 py-2 tabular-nums">{r.rank}</td>
                 <td className="px-2 py-2">
                   <div className="flex items-center gap-2">
+                    <PlayerAvatar name={r.name} position={r.position} />
                     <PositionChip position={r.position} />
                     <Link href={`/player/${r.id}`} className="font-medium hover:underline">
                       {r.name}

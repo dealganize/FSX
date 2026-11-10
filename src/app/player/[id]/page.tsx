@@ -14,6 +14,7 @@ import { AskButton } from "@/components/tutor/ask-button";
 import { formatValue, MIN_POINTS_FOR_VOLATILITY, volatilityBand } from "@/lib/domain/market";
 import { loadCompanies, loadMarket, loadPlayer, parseFormat } from "@/lib/repo/page-data";
 import { toMatchPlayers } from "@/lib/repo/slim";
+import { PlayerAvatar } from "@/components/market/avatars";
 
 export const metadata: Metadata = { title: "Player" };
 
@@ -52,7 +53,10 @@ async function PlayerContent({ params, searchParams }: PageProps<"/player/[id]">
             <span className="text-muted-foreground text-sm">{p.team ?? "Free agent"}</span>
             <InjuryChip status={p.injuryStatus} />
           </div>
-          <h1 className="text-3xl font-bold tracking-tight">{p.name}</h1>
+          <div className="flex items-center gap-3">
+            <PlayerAvatar name={p.name} position={p.position} size="lg" />
+            <h1 className="text-3xl font-bold tracking-tight">{p.name}</h1>
+          </div>
           {row ? (
             <div className="flex flex-wrap items-baseline gap-3">
               <span className="text-3xl font-semibold tabular-nums">{formatValue(row.value)}</span>

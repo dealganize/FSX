@@ -10,6 +10,7 @@ import { formatValue } from "@/lib/domain/market";
 import { formatUsdBillions, investingStyle, matchCompany, STYLE_COPY, topPercentText } from "@/lib/domain/match";
 import { Term } from "@/components/learn/term";
 import { PositionChip } from "./bits";
+import { CompanyBadge, PlayerAvatar } from "./avatars";
 
 export interface MatchPlayer {
   id: string;
@@ -75,11 +76,12 @@ export function MatchCard({
           paired with the company at the same spot in its own market.
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+      <CardContent className="@container space-y-4">
+        <div className="grid gap-3 @xl:grid-cols-[1fr_auto_1fr] @xl:items-center">
           <div className="bg-secondary/60 rounded-lg p-4">
             <p className="text-muted-foreground text-xs uppercase tracking-wide">Player</p>
             <p className="mt-1 flex items-center gap-2 text-lg font-semibold">
+              <PlayerAvatar name={player.name} position={player.position} size="md" />
               <PositionChip position={player.position} />
               <Link href={`/player/${player.id}`} className="hover:underline">
                 {player.name}
@@ -94,8 +96,11 @@ export function MatchCard({
           </p>
           <div className="bg-accent/60 rounded-lg p-4">
             <p className="text-muted-foreground text-xs uppercase tracking-wide">Company</p>
-            <p className="mt-1 text-lg font-semibold">
-              {match.company.name} <span className="text-muted-foreground text-sm font-normal">({match.company.ticker})</span>
+            <p className="mt-1 flex items-center gap-2 text-lg font-semibold">
+              <CompanyBadge ticker={match.company.ticker} />
+              <span>
+                {match.company.name} <span className="text-muted-foreground text-sm font-normal">({match.company.ticker})</span>
+              </span>
             </p>
             <p className="text-sm">
               Public float {formatUsdBillions(match.company.valueUsd)} · rank {match.companyRank} of {companies.length}

@@ -13,6 +13,7 @@ import { AskButton } from "@/components/tutor/ask-button";
 import { formatValue } from "@/lib/domain/market";
 import { loadPortfolio } from "@/lib/repo/page-data";
 import { cn } from "@/lib/utils";
+import { PlayerAvatar } from "@/components/market/avatars";
 
 export const metadata: Metadata = { title: "Sleeper roster as a portfolio" };
 
@@ -124,6 +125,7 @@ async function RosterContent({ params, searchParams }: PageProps<"/portfolio/sle
                   <tr key={h.playerId} className="border-t">
                     <td className="py-2">
                       <span className="flex items-center gap-2">
+                        <PlayerAvatar name={h.name} position={h.position} />
                         <PositionChip position={h.position} />
                         {h.price !== null ? (
                           <Link href={`/player/${h.playerId}`} className="hover:underline">

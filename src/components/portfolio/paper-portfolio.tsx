@@ -13,6 +13,7 @@ import { diversification, unrealisedGain, type Holding } from "@/lib/domain/port
 import { formatSigned, formatValue } from "@/lib/domain/market";
 import { realisedTotal, STARTING_CASH } from "@/lib/domain/paper";
 import { DiversificationSummary } from "./diversification-summary";
+import { PlayerAvatar } from "@/components/market/avatars";
 
 export function PaperPortfolio({ prices }: { prices: Record<string, { value: number }> }) {
   const { state, reset } = usePaper();
@@ -74,6 +75,7 @@ export function PaperPortfolio({ prices }: { prices: Record<string, { value: num
                       <tr key={h.playerId} className="border-t">
                         <td className="py-2">
                           <span className="flex items-center gap-2">
+                            <PlayerAvatar name={h.name} position={h.position} />
                             <PositionChip position={h.position} />
                             <Link href={`/player/${h.playerId}`} className="hover:underline">
                               {h.name}
