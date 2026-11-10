@@ -32,6 +32,8 @@ export interface TutorResult {
   stopReason: string | null;
   iterations: number;
   model: string;
+  /** Model ids reported by the API responses (should equal `model`). */
+  servedModels: string[];
 }
 
 export interface TutorEvents {
@@ -63,6 +65,7 @@ export async function runTutor(args: {
   let stopReason: string | null = null;
   let iterations = 0;
   let jsonRetries = 0;
+  const servedModels = new Set<string>();
 
   while (iterations < MAX_ITERATIONS) {
     iterations++;
@@ -89,6 +92,7 @@ export async function runTutor(args: {
       if (err instanceof Anthropic.APIError || jsonRetries++ >= 1) throw err;
       continue;
     }
+    servedModels.add(message.model);
     usage.inputTokens += message.usage.input_tokens;
     usage.outputTokens += message.usage.output_tokens;
     usage.cacheReadTokens += message.usage.cache_read_input_tokens ?? 0;
@@ -117,7 +121,7 @@ export async function runTutor(args: {
     messages.push({ role: "user", content: results });
   }
 
-  return { text: text.trim(), toolCalls, usage, stopReason, iterations, model };
+  return { text: text.trim(), toolCalls, usage, stopReason, iterations, model, servedModels: [...servedModels] };
 }
 
 /** USD per million tokens (first-party API, prompts ≤ 100K tokens). See docs/decisions/0005. */
