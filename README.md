@@ -214,7 +214,7 @@ workflow. The artefacts are in the repo so the process can be inspected:
    approved the decisions before the build.
 3. **Conventions for agents.** [`CLAUDE.md`](CLAUDE.md) holds the ground rules (no invented numbers, source
    rules, Next.js 16 patterns, workflow).
-4. **Small planned tasks, small commits.** Each step was typechecked, linted and tested before committing
+4. **Planned tasks, committed step by step.** Each step (data layer, domain logic, UI, tests, evals) was typechecked, linted and tested before committing
    (see `git log`). Real API responses were recorded once as fixtures, so tests never hit the network.
 5. **Checks that caught real bugs.** The Playwright suite found a crash where an effect returned the Promise
    from `scrollIntoView()` in the current Chrome, and axe found colour-contrast failures, which led to a separate
