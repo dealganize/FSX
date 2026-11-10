@@ -223,7 +223,7 @@ kept for now; a comparison run with Sonnet 5.5 as the tutor (≈ $0.90) is the n
 
 John creates the accounts; no credentials are stored in the repo.
 
-1. **Neon**: sign up at neon.tech → *New project* (region: Frankfurt, `aws-eu-central-1`) → copy the
+1. **Neon**: either run `neon login` and `neon init --org-id <org> --region-id aws-eu-central-1 --project-name fantasy-stock-exchange` (creates the project, writes `DATABASE_URL` and `DATABASE_URL_UNPOOLED` to `.env`, adds `neon.ts`), or sign up at neon.tech → *New project* (region: Frankfurt, `aws-eu-central-1`) → copy the
    *pooled* connection string (`postgres://…-pooler…/neondb?sslmode=require`).
 2. Load data into Neon from your machine (PowerShell):
    ```powershell

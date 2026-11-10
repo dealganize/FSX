@@ -48,3 +48,4 @@ next-env.d.ts
 /blob-report/
 /evals/results/*.local.json
 .vitest-cache/
+.neon
