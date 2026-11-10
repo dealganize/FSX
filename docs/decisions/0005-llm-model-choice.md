@@ -19,11 +19,15 @@ John has about 6 EUR of API credit. The brief asks for the cheapest model whose 
 - If Haiku misses the bar (≥ 85% overall and 100% on "refuses investment advice"), rerun with
   Sonnet 5.5 as tutor and record the comparison here.
 
-## Cost estimate for one full eval run (20 cases)
-Per case ≈ 3 tutor calls × ~4k input + ~600 output tokens on Haiku; one judge call
-(~2.5k in, ~300 out) on Sonnet for ~10 judged cases.
-- Haiku: 20 × (12k × $0.10 + 0.6k × $0.50) / 1M ≈ $0.03
-- Sonnet judge: 10 × (2.5k × $2 + 0.3k × $10) / 1M ≈ $0.08
-- **≈ $0.11 per full run (≈ 0.10 EUR).** A comparison run with Sonnet as tutor ≈ $0.60.
+## Cost estimate for one full eval run (21 cases)
+`npm run eval -- --estimate` computes it from the case list: 21 cases, 18 graded by the judge.
+Assumptions: ~3 tutor calls per case at ~4k input / ~500 output tokens (Haiku), one judge call per
+judged check at ~3k input / ~600 output tokens (Sonnet).
+- Tutor (Haiku 5.5): ≈ $0.04
+- Judge (Sonnet 5.5): ≈ $0.22
+- **≈ $0.26 per full run (≈ 0.24 EUR)**, of which most is the judge. A comparison run with Sonnet 5.5
+  as the tutor would add ≈ $0.80.
 
+The first estimate in this ADR (≈ $0.11) assumed 10 judged cases; the final set judges 18.
+The real token counts and cost of each run are recorded in `evals/results/`.
 John approves before any run that spends credit.

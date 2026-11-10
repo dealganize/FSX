@@ -94,7 +94,7 @@ async function PlayerContent({ params, searchParams }: PageProps<"/player/[id]">
                 <Stat label="Age" value={p.age ? String(p.age) : "n/a"} />
                 <Stat label="Years in the NFL" value={p.yearsExp !== null ? String(p.yearsExp) : "n/a"} />
                 <Stat label="Injury status" value={p.injuryStatus ?? "None listed"} />
-                <Stat label="Volume (24h)" value={row ? `+${row.adds.toLocaleString("en-US")} added / −${row.drops.toLocaleString("en-US")} dropped` : "n/a"} term="volume" />
+                <Stat label="Volume (24h)" value={!row ? "n/a" : row.adds || row.drops ? `+${row.adds.toLocaleString("en-US")} added / −${row.drops.toLocaleString("en-US")} dropped` : "Not trending today"} term="volume" />
               </dl>
               <div className="mt-4">
                 <TrendingCredit />
